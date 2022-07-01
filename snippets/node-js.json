@@ -1,4 +1,46 @@
 {
+    "express-static": {
+        "prefix": "exstatic",
+        "body": ["app.use(express.static(\"${1:public}\"));"],
+        "description": "Express set the static folder"
+    },
+
+    "express-url-encoded": {
+        "prefix": "exue",
+        "body": ["app.use(express.urlencoded({ extended: ${1:false} }));"],
+        "description": "Express URL encoded"
+    },
+
+    "express-json": {
+        "prefix": "exjson",
+        "body": ["app.use(express.json());"],
+        "description": "Express set to use json"
+    },
+
+    "Router-GET-route": {
+        "prefix": "ergr",
+        "body": ["router.get(\"${1}\", (req, res) => {${2}});"],
+        "description": "A router based get route"
+    },
+
+    "Router-POST-route": {
+        "prefix": "erpr",
+        "body": ["router.post(\"${1}\", (req, res) => {${2}});"],
+        "description": "A router based post route"
+    },
+
+    "GET-route": {
+        "prefix": "esgr",
+        "body": ["app.get(\"${1}\", (req, res) => {${2}});"],
+        "description": "A simple based get route"
+    },
+
+    "POST-route": {
+        "prefix": "espr",
+        "body": ["app.post(\"${1}\", (req, res) => {${2}});"],
+        "description": "A simple based post route"
+    },
+
     "express-server": {
         "prefix": "exs",
         "body": [
@@ -15,27 +57,8 @@
         "description": "Express simple Hello world server Setup"
     },
 
-    "generate-schema": {
-        "prefix": "gns",
-        "body": [
-            "const mongoose = require(\"mongoose\");",
-            "",
-            "const ${1:schema} = new mongoose.Schema(",
-            "\t{",
-            "\t\t${0}",
-            "\t},",
-            "\t{ timestamps: true }",
-            ");",
-            "",
-            "const ${2:Model} = mongoose.model(\"${2:Model}\", ${1:schema});",
-            "",
-            "module.exports = { ${2:Model} };"
-        ],
-        "description": "Define schema of data in API"
-    },
-
-    "generate-route": {
-        "prefix": "gnr",
+    "Express-routes": {
+        "prefix": "exr",
         "body": [
             "const router = require(\"express\").Router();",
             "",
@@ -49,21 +72,7 @@
             "",
             "module.exports = router;"
         ],
-        "description": "Generating routes for server"
-    },
-
-    "debugging": {
-        "prefix": "dbug",
-        "body": [
-            "const debug = require(\"debug\");",
-            "",
-            "const info = debug(\"info\"),",
-            "\terrors = debug(\"error\"),",
-            "\tmongooseDebug = debug(\"mongoose\");",
-            "",
-            "module.exports = { info, errors, mongooseDebug };"
-        ],
-        "description": "Generating debugging variables"
+        "description": "Express routes for server"
     },
 
     "MongoDB-database-connection": {
@@ -78,7 +87,7 @@
             "\t})",
             "\t.catch(() => console.log(`Server is not connected to MongoDB...`));"
         ],
-        "description": "Generating mongodb database connection"
+        "description": "MongoDB database connection"
     },
 
     "MySQL-database-connection": {
@@ -111,11 +120,30 @@
             "\tsequelize",
             "};"
         ],
-        "description": "Generating mysql database connection"
+        "description": "MySQL database connection"
+    },
+
+    "Define-schema": {
+        "prefix": "gns",
+        "body": [
+            "const mongoose = require(\"mongoose\");",
+            "",
+            "const ${1:schema} = new mongoose.Schema(",
+            "\t{",
+            "\t\t${0}",
+            "\t},",
+            "\t{ timestamps: true }",
+            ");",
+            "",
+            "const ${2:Model} = mongoose.model(\"${2:Model}\", ${1:schema});",
+            "",
+            "module.exports = { ${2:Model} };"
+        ],
+        "description": "Define schema of data in API"
     },
 
     "passport-strategy": {
-        "prefix": "pas",
+        "prefix": "pass",
         "body": [
             "const { Strategy, ExtractJwt } = require(\"passport-jwt\"),",
             "\tpassport = require(\"passport\"),",
@@ -171,45 +199,17 @@
         "description": "Sending mail to user"
     },
 
-    "express-static": {
-        "prefix": "estatic",
-        "body": ["app.use(express.static(\"${1:public}\"));"],
-        "description": "Express set the static folder"
-    },
-
-    "express-url-encoded": {
-        "prefix": "eue",
-        "body": ["app.use(express.urlencoded({ extended: ${1:false} }));"],
-        "description": "Express URL encoded"
-    },
-
-    "express-json": {
-        "prefix": "ejson",
-        "body": ["app.use(express.json());"],
-        "description": "Express set to use json"
-    },
-
-    "Router-GET-route": {
-        "prefix": "ergr",
-        "body": ["router.get(\"${1}\", (req, res) => {${2}});"],
-        "description": "A router based get route"
-    },
-
-    "Router-POST-route": {
-        "prefix": "erpr",
-        "body": ["router.post(\"${1}\", (req, res) => {${2}});"],
-        "description": "A router based post route"
-    },
-
-    "GET-route": {
-        "prefix": "esgr",
-        "body": ["app.get(\"${1}\", (req, res) => {${2}});"],
-        "description": "A simple based get route"
-    },
-
-    "POST-route": {
-        "prefix": "espr",
-        "body": ["app.post(\"${1}\", (req, res) => {${2}});"],
-        "description": "A simple based post route"
+    "debugging": {
+        "prefix": "dbug",
+        "body": [
+            "const debug = require(\"debug\");",
+            "",
+            "const info = debug(\"info\"),",
+            "\terrors = debug(\"error\"),",
+            "\tmongooseDebug = debug(\"mongoose\");",
+            "",
+            "module.exports = { info, errors, mongooseDebug };"
+        ],
+        "description": "Generating debugging variables"
     }
 }
