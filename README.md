@@ -1,65 +1,81 @@
-# nodejs-code-snippets README
+# NodeJS Code Snippets
 
-This is the README for your extension "nodejs-code-snippets". After writing up a brief description, we recommend including the following sections.
+The essential collection of Nodejs snippets.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Only what you need and nothing more.
 
-For example if there is an image subfolder under your extension project workspace:
+Simply, simple Nodejs snippets.
 
-\!\[feature X\]\(images/feature-x.png\)
+These snippets were selected carefully from my own day-to-day NodeJS use. Not
+everything in NodeJS is included here. This is a hand selected set of snippets
+that work the way that you would expect, not just a copy of the documentation.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Snippets
 
-## Requirements
+| Snippet    | Renders                                  |
+| ---------- | ---------------------------------------- |
+| `exstatic` | Express set the static folder            |
+| `exue`     | Express URL encoded                      |
+| `exjson`   | Express set to use json                  |
+| `ergr`     | A router based get route                 |
+| `erpr`     | A router based post route                |
+| `esgr`     | A simple based get route                 |
+| `espr`     | A simple based post route                |
+| `exs`      | Express simple Hello world server Setup  |
+| `exr`      | Express routes for server                |
+| `mongodbc` | MongoDB database connection              |
+| `mysqlc`   | MySQL database connection                |
+| `gns`      | Define schema of data in API             |
+| `pass`     | Defining passport strategy               |
+| `mails`    | Sending mail to user                     |
+| `dbug`     | Generating debugging variables           |
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## Full Expansions
 
-## Extension Settings
+### exstatic - Express set the static folder
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+```javascript
+app.use(express.static("public"));
+```
 
-For example:
+### exue - Express URL encoded
 
-This extension contributes the following settings:
+```javascript
+app.use(express.urlencoded({ extended: false }));
+```
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+### exjson - Express set to use json
 
-## Known Issues
+```javascript
+app.use(express.json());
+```
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+### esgr - A simple based get route
 
-## Release Notes
+```javascript
+app.get("", (request, response) => {});
+```
 
-Users appreciate release notes as you update your extension.
+### espr - A simple based post route
 
-### 1.0.0
+```javascript
+app.post("", (request, response) => {});
+```
 
-Initial release of ...
+### exs - Express simple Hello world server Setup
 
-### 1.0.1
+```javascript
+const express = require("express");
+const app = express();
 
-Fixed issue #.
+app.get('/', (req, res) => {
+    res.send("Hello world");
+});
 
-### 1.1.0
+const port = process.env.PORT || 5000;
+app.listen(port, () => console.log(`Server is running on...http://localhost:${port}`));
+```
 
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+## Thank You! ❤️
