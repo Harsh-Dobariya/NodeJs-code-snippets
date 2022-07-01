@@ -1,0 +1,215 @@
+{
+    "express-server": {
+        "prefix": "exs",
+        "body": [
+            "const express = require(\"express\");",
+            "const app = express();",
+            "",
+            "app.get('/', (req, res) => {",
+            "\tres.send(\"Hello world\");",
+            "});",
+            "",
+            "const port = process.env.PORT || ${1:5000};",
+            "app.listen(port, () => console.log(`Server is running on...http://localhost:\\${port}`));"
+        ],
+        "description": "Express simple Hello world server Setup"
+    },
+
+    "generate-schema": {
+        "prefix": "gns",
+        "body": [
+            "const mongoose = require(\"mongoose\");",
+            "",
+            "const ${1:schema} = new mongoose.Schema(",
+            "\t{",
+            "\t\t${0}",
+            "\t},",
+            "\t{ timestamps: true }",
+            ");",
+            "",
+            "const ${2:Model} = mongoose.model(\"${2:Model}\", ${1:schema});",
+            "",
+            "module.exports = { ${2:Model} };"
+        ],
+        "description": "Define schema of data in API"
+    },
+
+    "generate-route": {
+        "prefix": "gnr",
+        "body": [
+            "const router = require(\"express\").Router();",
+            "",
+            "router.get(\"${1}\", );",
+            "",
+            "router.post(\"${2}\", );",
+            "",
+            "router.put(\"${3}\", );",
+            "",
+            "router.delete(\"${4}\", );",
+            "",
+            "module.exports = router;"
+        ],
+        "description": "Generating routes for server"
+    },
+
+    "debugging": {
+        "prefix": "dbug",
+        "body": [
+            "const debug = require(\"debug\");",
+            "",
+            "const info = debug(\"info\"),",
+            "\terrors = debug(\"error\"),",
+            "\tmongooseDebug = debug(\"mongoose\");",
+            "",
+            "module.exports = { info, errors, mongooseDebug };"
+        ],
+        "description": "Generating debugging variables"
+    },
+
+    "MongoDB-database-connection": {
+        "prefix": "mongodbc",
+        "body": [
+            "const mongoose = require(\"mongoose\");",
+            "",
+            "mongoose",
+            "\t.connect(\"mongodb://localhost/Database-Name\")",
+            "\t.then(() => {",
+            "\t\tconsole.log(`Server connected to MongoDB...`);",
+            "\t})",
+            "\t.catch(() => console.log(`Server is not connected to MongoDB...`));"
+        ],
+        "description": "Generating mongodb database connection"
+    },
+
+    "MySQL-database-connection": {
+        "prefix": "mysqlc",
+        "body": [
+            "const { Sequelize } = require(`sequelize`);",
+            "",
+            "const sequelize = new Sequelize(\"${1:database_name}\", \"${2:root}\", \"${3}\", {",
+            "\thost: HOST,",
+            "\tdialect: `mysql`,",
+            "\tdefine: {",
+            "\t\ttimestamps: false",
+            "\t},",
+            "\tlogging: false",
+            "});",
+            "",
+            "sequelize",
+            "\t.authenticate()",
+            "\t.then(() => {",
+            "\t\tconsole.log(`Server is connected to MySQL....`);",
+            "\t})",
+            "\t.catch((err) => {",
+            "\t\tconsole.log(`Server is not connected to MySQL....`);",
+            "",
+            "\t\tconsole.error(err);",
+            "\t});",
+            "",
+            "module.exports = {",
+            "\tdatabase,",
+            "\tsequelize",
+            "};"
+        ],
+        "description": "Generating mysql database connection"
+    },
+
+    "passport-strategy": {
+        "prefix": "pas",
+        "body": [
+            "const { Strategy, ExtractJwt } = require(\"passport-jwt\"),",
+            "\tpassport = require(\"passport\"),",
+            "\toptions = {",
+            "\t\tjwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),",
+            "\t\tsecretOrKey: process.env.JWT_PRIVATE_KEY",
+            "\t};",
+            "",
+            "passport.use(",
+            "\t\"${1:user}\",",
+            "\tnew Strategy(options, (decoded, done) => {",
+            "\t\t${2:User}.findById(decoded._id)",
+            "\t\t\t.then((${1:user}) => {",
+            "\t\t\t\tif (!${1:user}) return done(null, false);",
+            "\t\t\t\tdone(null, ${1:user});",
+            "\t\t\t})",
+            "\t\t\t.catch((err) => done(err));",
+            "\t})",
+            ");"
+        ],
+        "description": "Defining passport strategy"
+    },
+
+    "send-mail": {
+        "prefix": "mails",
+        "body": [
+            "const nodemailer = require(\"nodemailer\");",
+            "",
+            "const transporter = nodemailer.createTransport({",
+            "\tservice: \"Gmail\",",
+            "\tauth: {",
+            "\t\tuser: process.env.GMAIL_USER,",
+            "\t\tpass: process.env.GMAIL_PASSWORD",
+            "\t}",
+            "});",
+            "",
+            "module.exports = {",
+            "\tsendVerificationEmail: (user) => {",
+            "\t\tconst mailToSend = {",
+            "\t\t\tfrom: process.env.GMAIL_USER,",
+            "\t\t\tto: user.email,",
+            "\t\t\tsubject: \"${1:subject}\",",
+            "\t\t\thtml: \"${2:content}\"",
+            "\t\t};",
+            "",
+            "\t\ttransporter",
+            "\t\t\t.sendMail(mailToSend)",
+            "\t\t\t.then(() => console.log(\"Email has been sent.\"))",
+            "\t\t\t.catch(() => console.log(\"Email not sent.\"));",
+            "\t}",
+            "};"
+        ],
+        "description": "Sending mail to user"
+    },
+
+    "express-static": {
+        "prefix": "estatic",
+        "body": ["app.use(express.static(\"${1:public}\"));"],
+        "description": "Express set the static folder"
+    },
+
+    "express-url-encoded": {
+        "prefix": "eue",
+        "body": ["app.use(express.urlencoded({ extended: ${1:false} }));"],
+        "description": "Express URL encoded"
+    },
+
+    "express-json": {
+        "prefix": "ejson",
+        "body": ["app.use(express.json());"],
+        "description": "Express set to use json"
+    },
+
+    "Router-GET-route": {
+        "prefix": "ergr",
+        "body": ["router.get(\"${1}\", (req, res) => {${2}});"],
+        "description": "A router based get route"
+    },
+
+    "Router-POST-route": {
+        "prefix": "erpr",
+        "body": ["router.post(\"${1}\", (req, res) => {${2}});"],
+        "description": "A router based post route"
+    },
+
+    "GET-route": {
+        "prefix": "esgr",
+        "body": ["app.get(\"${1}\", (req, res) => {${2}});"],
+        "description": "A simple based get route"
+    },
+
+    "POST-route": {
+        "prefix": "espr",
+        "body": ["app.post(\"${1}\", (req, res) => {${2}});"],
+        "description": "A simple based post route"
+    }
+}
