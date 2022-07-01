@@ -2,18 +2,30 @@
     "name": "nodejs-code-snippets",
     "displayName": "Nodejs code snippets",
     "description": "For developing fast nodejs API",
-    "version": "0.0.1",
+    "publisher": "Harsh-Dobariya",
+    "author": {
+        "name": "Harsh Dobariya",
+        "email": "harshdobariya2626@gmail.com",
+        "url": "https://github.com/Harsh-Dobariya"
+    },
+    "icon": "icon.png",
+    "version": "1.0.0",
     "engines": {
         "vscode": "^1.68.0"
     },
     "categories": [
-        "Snippets"
+        "Snippets",
+        "Programming Languages"
     ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Harsh-Dobariya/NodeJs-code-snippets.git"
+    },
     "contributes": {
         "snippets": [
             {
                 "language": "javascript",
-                "path": "./snippets/snippets.code-snippets"
+                "path": "./snippets/node-js.json"
             }
         ]
     }
