@@ -2,6 +2,7 @@
     "name": "nodejs-code-snippets",
     "displayName": "Nodejs code snippets",
     "description": "A simple NodeJS snippets for developing fast nodejs API",
+    "version": "1.0.0",
     "publisher": "Harsh-Dobariya",
     "author": {
         "name": "Harsh Dobariya",
@@ -9,18 +10,27 @@
         "url": "https://github.com/Harsh-Dobariya"
     },
     "icon": "icon.png",
-    "version": "1.0.0",
     "engines": {
         "vscode": "^1.68.0"
     },
+    "homepage": "https://github.com/Harsh-Dobariya/NodeJs-code-snippets",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Harsh-Dobariya/NodeJs-code-snippets"
+    },
+    "bugs": {
+        "url": "https://github.com/Harsh-Dobariya/NodeJs-code-snippets/issues"
+    },
+    "keywords": [
+        "express",
+        "nodejs",
+        "swagger",
+        "documentation"
+    ],
     "categories": [
         "Snippets",
         "Programming Languages"
     ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Harsh-Dobariya/NodeJs-code-snippets.git"
-    },
     "contributes": {
         "snippets": [
             {
