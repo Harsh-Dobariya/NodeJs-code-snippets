@@ -10,6 +10,7 @@
         "url": "https://github.com/Harsh-Dobariya"
     },
     "icon": "icon.png",
+    "license": "MIT",
     "engines": {
         "vscode": "^1.68.0"
     },
