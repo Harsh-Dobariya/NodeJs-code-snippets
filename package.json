@@ -1,7 +1,7 @@
 {
     "name": "nodejs-code-snippets",
     "displayName": "Nodejs code snippets",
-    "description": "For developing fast nodejs API",
+    "description": "A simple NodeJS snippets for developing fast nodejs API",
     "publisher": "Harsh-Dobariya",
     "author": {
         "name": "Harsh Dobariya",
