@@ -1,0 +1,146 @@
+{
+    "Basic-Info": {
+        "prefix": "swbi",
+        "body": [
+            "openapi: \"${1:3.0.0}\",",
+            "info: {",
+            "\tversion: \"${2:1.0.0}\",",
+            "\ttitle: \"${3}\",",
+            "\tdescription: \"${4}\",",
+            "\tcontact: {",
+            "\t\tname: \"${5}\",",
+            "\t\temail: \"${6}\",",
+            "\t\turl: \"${7}\",",
+            "\t}",
+            "}"
+        ],
+        "description": "Swagger basic info"
+    },
+
+    "Server-Info": {
+        "prefix": "swsi",
+        "body": [
+            "servers: [",
+            "\t{",
+            "\t\turl: \"${1}\",",
+            "\t\tdescription: \"${2:Local server}\"",
+            "\t}",
+            "]"
+        ],
+        "description": "Swagger server info"
+    },
+
+    "Swagger-Tags": {
+        "prefix": "swtg",
+        "body": [
+            "tags: [",
+            "\t{",
+            "\t\tname: \"${1:User Routes}\",",
+            "\t\tdescription: \"${2:user side operation}\"",
+            "\t}",
+            "]"
+        ],
+        "description": "Swagger Tags"
+    },
+
+    "Security-Schema": {
+        "prefix": "sws",
+        "body": [
+            "components: {",
+            "\tsecuritySchemes: {",
+            "\t\tbearerAuth: {",
+            "\t\t\ttype: \"${1:http}\",",
+            "\t\t\tscheme: \"${2:Bearer}\",",
+            "\t\t\tbearerFormat: \"${3:JWT}\"",
+            "\t\t}",
+            "\t}",
+            "}"
+        ],
+        "description": "Swagger Security Schema"
+    },
+
+    "String-Schema": {
+        "prefix": "swscs",
+        "body": [
+            "schemas: {",
+            "\t${1:_id}: {",
+            "\t\ttype: \"string\",",
+            "\t\tdescription: \"${2:An id of a object}\",",
+            "\t\texample: \"${3:624d2822a2833eaddc2450be}\"",
+            "\t}",
+            "}"
+        ],
+        "description": "Swagger String Schema"
+    },
+
+    "Object-Schema": {
+        "prefix": "swsco",
+        "body": [
+            "${1:Error}: {",
+            "\ttype: \"object\",",
+            "\tdescription: \"${2:error object}\",",
+            "\tproperties: {",
+            "\t\terror: {",
+            "\t\t\ttype: \"string\",",
+            "\t\t\tdescription: \"${3:error message}\",",
+            "\t\t\texample: \"${4:NOT_FOUND}\"",
+            "\t\t},",
+            "\t}",
+            "}"
+        ],
+        "description": "Swagger Object Schema"
+    },
+    
+    "Swagger-Path": {
+        "prefix": "swpath",
+        "body": [
+            "paths: {",
+            "\t\"${1:/users/signUp}\": {",
+            "\t\t${2:post}: {",
+            "\t\t\ttags: [\"${3:User Routes}\"],",
+            "\t\t\tsummary: \"${4:register User}\",",
+            "\t\t\tdescription: \"${5:A User registration request}\",",
+            "\t\t\toperationId: \"${6:register User}\",",
+            "\t\t\trequestBody: {",
+            "\t\t\t\tcontent: {",
+            "\t\t\t\t\t\"application/json\": {",
+            "\t\t\t\t\t\tschema: {",
+            "\t\t\t\t\t\t\ttype: \"object\",",
+            "\t\t\t\t\t\t\tdescription: \"${7:User object}\",",
+            "\t\t\t\t\t\t\tproperties: {",
+            "\t\t\t\t\t\t\t\t${8:name}: {",
+            "\t\t\t\t\t\t\t\t\ttype: \"${9:string}\",",
+            "\t\t\t\t\t\t\t\t\tdescription: \"${10:User's name}\",",
+            "\t\t\t\t\t\t\t\t\texample: \"${11:Harsh}\"",
+            "\t\t\t\t\t\t\t\t}",
+            "\t\t\t\t\t\t\t}",
+            "\t\t\t\t\t\t}",
+            "\t\t\t\t\t}",
+            "\t\t\t\t}",
+            "\t\t\t},",
+            "\t\t\tresponses: {",
+            "\t\t\t\t${12:201}: {",
+            "\t\t\t\t\tdescription: \"${13:A response for success registration}\",",
+            "\t\t\t\t\tcontent: {",
+            "\t\t\t\t\t\t\"application/json\": {",
+            "\t\t\t\t\t\t\tschema: {",
+            "\t\t\t\t\t\t\t\ttype: \"object\",",
+            "\t\t\t\t\t\t\t\tproperties: {",
+            "\t\t\t\t\t\t\t\t\tmessage: {",
+            "\t\t\t\t\t\t\t\t\t\ttype: \"${14:string}\",",
+            "\t\t\t\t\t\t\t\t\t\tdescription: \"${15:success message}\",",
+            "\t\t\t\t\t\t\t\t\t\texample: \"${16:User registered}\"",
+            "\t\t\t\t\t\t\t\t\t}",
+            "\t\t\t\t\t\t\t\t}",
+            "\t\t\t\t\t\t\t}",
+            "\t\t\t\t\t\t}",
+            "\t\t\t\t\t}",
+            "\t\t\t\t}",
+            "\t\t\t}",
+            "\t\t}",
+            "\t}",
+            "}"
+        ],
+        "description": "Swagger Path"
+    }
+}

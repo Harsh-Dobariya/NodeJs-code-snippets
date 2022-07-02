@@ -12,7 +12,7 @@ These snippets were selected carefully from my own day-to-day NodeJS use. Not
 everything in NodeJS is included here. This is a hand selected set of snippets
 that work the way that you would expect, not just a copy of the documentation.
 
-## Snippets
+## NodeJS Snippets
 
 | Snippet    | Renders                                  |
 | ---------- | ---------------------------------------- |

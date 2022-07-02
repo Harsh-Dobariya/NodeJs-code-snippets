@@ -26,6 +26,10 @@
             {
                 "language": "javascript",
                 "path": "./snippets/node-js.json"
+            },
+            {
+                "language": "javascript",
+                "path": "./snippets/swagger-doc.json"
             }
         ]
     }
