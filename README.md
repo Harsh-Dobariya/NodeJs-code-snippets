@@ -3,7 +3,6 @@
 The essential collection of Nodejs snippets.
 
 ## Features
-<hr>
 
 Only what you need and nothing more.
 
@@ -14,15 +13,10 @@ everything in NodeJS is included here. This is a hand selected set of snippets
 that work the way that you would expect, not just a copy of the documentation.
 
 ## Usages
-<hr>
-<br>
 
 ![Usage](usage.gif)
 
-<br>
-
 ## NodeJS Snippets
-<hr>
 
 | Snippet    | Renders                                 |
 | ---------- | --------------------------------------- |
@@ -41,10 +35,8 @@ that work the way that you would expect, not just a copy of the documentation.
 | `pass`     | Defining passport strategy              |
 | `mails`    | Sending mail to user                    |
 | `dbug`     | Generating debugging variables          |
-<br>
 
 ## Swagger Snippets
-<hr>
 
 | Snippet  | Renders                 |
 | -------- | ----------------------- |
@@ -57,7 +49,6 @@ that work the way that you would expect, not just a copy of the documentation.
 | `swpath` | Swagger Path            |
 
 ## NodeJS Full Expansions
-<hr>
 
 ### exstatic - Express set the static folder
 
