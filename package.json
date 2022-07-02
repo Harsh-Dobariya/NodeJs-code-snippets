@@ -2,7 +2,7 @@
     "name": "nodejs-code-snippets",
     "displayName": "Nodejs code snippets",
     "description": "A simple NodeJS snippets for developing fast nodejs API",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "publisher": "harsh-dobariya",
     "author": {
         "name": "Harsh Dobariya",
