@@ -1,4 +1,11 @@
 {
+  "create require statement": {
+    "prefix": "requ",
+    "body": [
+      "const $1 = require('$1')"
+    ],
+    "description": "create require statement"
+  },
   "express-static": {
     "prefix": "exstatic",
     "body": [
