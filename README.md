@@ -1,6 +1,10 @@
-# NodeJS Code Snippets
+a# NodeJS Code Snippets
 
 The essential collection of Nodejs snippets.
+
+## Author
+
+<a href="https://github.com/Harsh-Dobariya">@ Harsh Dobariya</a>
 
 ## Features
 
@@ -20,6 +24,7 @@ that work the way that you would expect, not just a copy of the documentation.
 
 | Snippet    | Renders                                 |
 | ---------- | --------------------------------------- |
+| `requ`     | create require statement                |
 | `exstatic` | Express set the static folder           |
 | `exue`     | Express URL encoded                     |
 | `exjson`   | Express set to use json                 |
