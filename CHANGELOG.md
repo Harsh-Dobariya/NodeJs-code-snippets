@@ -6,6 +6,10 @@ All notable changes to the "nodejs-code-snippets" extension will be documented i
 
 - require statement added
 
+## [1.1.0]
+
+- Testing added
+
 ## [1.0.2]
 
 - Solve some bugs and issue in loading extension
