@@ -1,4 +1,4 @@
-a# NodeJS Code Snippets
+## NodeJS Code Snippets
 
 The essential collection of Nodejs snippets.
 
@@ -53,7 +53,7 @@ that work the way that you would expect, not just a copy of the documentation.
 | `swsco`  | Swagger Object Schema   |
 | `swpath` | Swagger Path            |
 
-## NodeJS Full Expansions
+# NodeJS Full Expansions
 
 ### exstatic - Express set the static folder
 
